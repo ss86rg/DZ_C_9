@@ -5,7 +5,7 @@
 
 int M = ReadInt("Введите m");
 int N = ReadInt("Введите n");
-positivNum(M, N);
+posNum(M, N);
 
 int ReadInt(string massage)
 {
@@ -13,15 +13,16 @@ int ReadInt(string massage)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-
-void positivNum(int arg1, int arg2)
+void posNum(int arg1, int arg2)
 {
-    if (arg1 <= arg2)
-    {
+    if (arg1 > arg2)
         return;
+    if (arg1 % 2 == 0)
+    {
+        System.Console.Write($" четные числа промежутка {arg1} -- ");
     }
-    positivNum(arg2-1);
-    System.Console.WriteLine(arg2);
-    
+    posNum(arg1 + 1, arg2);
 }
+
+
 
